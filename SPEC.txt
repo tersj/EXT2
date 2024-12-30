@@ -1,0 +1,47 @@
+
+========================================================================
+一. 项目编译步骤如下: 
+Step 1. SSH打开./fs/
+Step 2. 打开CMakeLists.txt文件
+Step 3. ctrl + shift + p呼出命令菜单
+Step 4. 输入CMake: Configure
+Step 5. 查看Generator (已用!!!!!标记)
+Step 6. 到/src/[A.c目录，打断点
+Step 7. 按下F5进行调试
+二. 驱动使用说明: 
+我们已经为同学们安装好了ddriver (disk driver)，支持命令如下
+ddriver [options]
+options:
+-i [k|u]      安装ddriver: [k] - kernel / [u] - user
+-t            测试ddriver[请忽略]
+-d            导出ddriver至当前工作目录[PWD]
+-r            擦除ddriver
+-l            显示ddriver的Log
+-v            显示ddriver的类型[内核模块 / 用户静态链接库]
+-h            打印本帮助菜单
+三. 文件结构说明
+1. 项目根目录: /home/students/210110625/aa/user-land-filesystem
+|--driver           驱动文件
+|--fs               FUSE文件系统文件
+|--LICENSE          LICENSE GPL v3          
+|--README.md        实验相关说明
+|--setenv.sh        项目环境配置
+2. FUSE文件系统目录: 以/home/students/210110625/aa/user-land-filesystem/simplefs (SFS) 为例
+|--.vscode          VSCode启动配置
+|--build            CMake构建目录
+|--CMake            CMake Module目录
+|--include          SFS文件系统头文件
+|--src              SFS文件系统源文件
+|--tests            测试脚本，tests/mnt为测试挂载点
+|--CMakeLists.txt   -    
+|--Makefile         -
+|--ddriver_dump     ddriver -d后的磁盘布局，可用HexEditor查看
+|--README.md        SFS FUSE开发记录
+四. FUSE体验
+在本项目中，我们已经有了两个FUSE文件系统样例
+1. SFS  (/home/students/210110625/aa/user-land-filesystem/simplefs)
+2. MYFS (/home/students/210110625/aa/user-land-filesystem/sapmles)
+大家直接SSH切到相应目录，打断点运行即可:
+注意SFS和MYFS的编译需要和一中步骤1 ~ 7一致
+========================================================================
+    
